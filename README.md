@@ -1,12 +1,12 @@
-To compile AST generator and generate AST:
+To build AST generator and generate AST:
 
 ```
-make ast output=./src/com/craftinginterpreters/lox
+make ast
 ```
 
-To compile everything else:
+To build and launch the interpreter:
 ```
-make build
+make lox
 ```
 
 To run the AST printer:
