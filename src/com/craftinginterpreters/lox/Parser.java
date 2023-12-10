@@ -9,11 +9,11 @@ class Parser {
 
     private final List<Token> tokens;
     private int current;
-    
+
     Parser(List<Token> tokens) {
         this.tokens = tokens;
     }
-    
+
     Expr parse() {
         try {
             return expression();
@@ -28,7 +28,7 @@ class Parser {
 
     private Expr equality() {
         Expr expr = comparison();
-        
+
         while (match(BANG_EQUAL, EQUAL_EQUAL)) {
             Token operator = previous();
             Expr right = comparison();
@@ -40,7 +40,7 @@ class Parser {
 
     private Expr comparison() {
         Expr expr = term();
-        
+
         while (match(GREATER, GREATER_EQUAL, LESS, LESS_EQUAL)) {
             Token operator = previous();
             Expr right = term();
